@@ -1,0 +1,22 @@
+{
+  "name": "metcon",
+  "version": "1.0.0",
+  "description": "online shopping platform",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MithilaDilshan/ITPM-Project.git"
+  },
+  "author": "it20276164 it20164508  it20005962 it20147846",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MithilaDilshan/ITPM-Project/issues"
+  },
+  "homepage": "https://github.com/MithilaDilshan/ITPM-Project#readme",
+  "dependencies": {
+    "react-router-dom": "^6.2.2"
+  }
+}
