@@ -1,0 +1,177 @@
+body {margin:0;height:950px;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar1 {
+
+  position: fixed;
+
+  top: 25%;
+
+  -webkit-transform: translateX(3650%);
+
+  -ms-transform: translateX(3650%);
+
+  transform: translateX(3650%);
+
+}
+
+
+
+.icon-bar1 a {
+
+  display: block;
+
+  text-align: center;
+
+  padding: 16px;
+
+  transition: all 0.3s ease;
+
+  color: white;
+
+  font-size: 20px;
+
+}
+
+.icon-barS {
+  position: fixed;
+  top: 25%;
+  -webkit-transform: translateX(3230%);
+  -ms-transform: translateX(3230%);
+  transform: translateX(3230%);
+}
+
+.icon-barS a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+
+.icon-barN1 {
+  position: fixed;
+  top: 15%;
+  -webkit-transform: translateX(3230%);
+  -ms-transform: translateX(3230%);
+  transform: translateX(3230%);
+}
+
+.icon-barN1 a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-barN2 {
+  position: fixed;
+
+  top: 65%;
+  -webkit-transform: translateX(3230%);
+  -ms-transform: translateX(3230%);
+  transform: translateX(3230%);
+
+}
+
+.icon-barN2 a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+
+}
+
+.icon-barR1 {
+  position: fixed;
+  top: 15%;
+  -webit-transform: translateX(3600%);
+  -ms-transform: translateX(3600%);
+  transform: translateX(3600%);
+
+}
+
+.icon-barR1 a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+
+}
+
+.icon-barR2{
+  position: fixed;
+  top:50%;
+  -webit-transform: translateX(3865%);
+  -ms-transform: translateX(3865%);
+  transform: translateX(3865%);
+}
+
+.icon-barR2 a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+
+}
+
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
