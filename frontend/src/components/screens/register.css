@@ -5,8 +5,8 @@ body {
 }
 
 .bg {
-    /* The image used */
-    background-image: url("");
+    /* The color used */
+    background-color: azure;
 
     /* Full height */
     height: 50%;
@@ -31,15 +31,20 @@ body {
 	width: 400px;
 	height:600px;
 	margin: 0 auto;
-	padding: 30px 0;		
+	padding: 30px 0;
+	background-color: transparent;	
 }
+
+
+	
+
 .signup-form form {
 	color: #999;
-	height: 450px;
+	
 	border-radius: 3px;
 	margin-bottom: 15px;
 	background: #000;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	
 	padding: 30px;
 }
 .signup-form h2 {

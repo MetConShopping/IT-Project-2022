@@ -12,11 +12,7 @@ const LoginScreen = ()=>{
     const [email , setEmail] = useState("");
     const [error , setError] = useState("");
 
-    useEffect(()=>{
-        if(localStorage.getItem("authToken")){  //push a user if he already logged in
-            history("/login");
-        }
-    } , [history])
+ 
 
     const loginHandler = async (e)=>{
         e.preventDefault();
