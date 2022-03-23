@@ -26,9 +26,9 @@ const LoginScreen = ()=>{
             history("/");
            }
 
-        //    else if(email === config.customer.email && password === config.customer.password){
-        //     history("/");  
-        //    }
+           else if(email === config.customer.email && password === config.customer.password){
+            history("/");  
+           }
            else 
                 alert("Invalide credentials")
             
