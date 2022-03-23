@@ -31,7 +31,7 @@ router.route('/add').post(upload.single('photo'), (req, res) => {
     const address = req.body.address;
     const phone = Number(req.body.phone);
     const email = req.body.email;
-    const photo = req.file.filename;
+    const photo = req.body.photo;
 
     const newAssistantData = {
         name,
@@ -68,7 +68,7 @@ router.route("/update/:id").put(upload.single('photo') , async (req , res)=>{  /
     const address = req.body.address;
     const phone = req.body.phone;
     const email = req.body.email;
-    const photo = req.file.filename;
+    const photo = req.body.photo;
 
     const updateStudent = {name , age , gender , address, phone, email, photo};
 

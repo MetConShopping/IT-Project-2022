@@ -3,13 +3,14 @@ import {Link , useNavigate} from "react-router-dom";
 import axios from "axios";
 import "./Slogin.css";
 import "./register.css";
+import config from "../../config/config.json";
 
 const LoginScreen = ()=>{
 
     const history = useNavigate();
 
-    const [password , setPassword] = useState("");
     const [email , setEmail] = useState("");
+    const [password , setPassword] = useState("");
     const [error , setError] = useState("");
 
  
@@ -17,24 +18,23 @@ const LoginScreen = ()=>{
     const loginHandler = async (e)=>{
         e.preventDefault();
 
-        const config = {
-            headers : {
-                "Content-Type" : "application/json"
-            }
-        }
+  
 
         try {
-            const {data} = await axios.post("http://localhost:8070/api/auth/login" , {email , password} , config);
+           if(email === config.stock.email && password === config.stock.password){
 
-            localStorage.setItem("authToken" , data.token);
+            history("/");
+           }
 
-            history.push("/");
+           else if(email === config.customer.email && password === config.customer.password){
+            history("/");  
+           }
+           else 
+                alert("Invalide credentials")
+            
 
         } catch (error) {
-            setError(error.response.data.error);
-            setTimeout(()=>{
-                setError("");
-            } , 5000); //5s
+           console.log(error)
         }
     }
 
