@@ -23,7 +23,7 @@ const LoginScreen = ()=>{
         try {
            if(email === config.stock.email && password === config.stock.password){
 
-            history("/");
+            history("/staff-stock");
            }
 
            else if(email === config.customer.email && password === config.customer.password){
@@ -70,7 +70,7 @@ const LoginScreen = ()=>{
                     <button type="submit" className="btn btn-primary btn-block"><i class="fa fa-leaf" aria-hidden="true"></i> Log in</button>
                 </div><br/>
                 <div className="clearfix">
-                   <Link to="/forgotpassword" className="float-right" style={{textDecoration:"none"}}><b> Forgot Password 🥺?</b></Link>
+                   <Link to="/forgotpassword" className="float-right" style={{textDecoration:"none", float:"left"}}><b> Forgot Password 🥺?</b></Link><br/><br/>
                    <center><p className="text-center"><Link to="/register" style={{textDecoration : "none",fontSize:"25px"}}><h5><i class="fa fa-cogs" aria-hidden="true"></i> Create an Account</h5></Link></p></center>
                 </div>        
             </form>
