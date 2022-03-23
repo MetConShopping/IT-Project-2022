@@ -31,7 +31,7 @@ router.route('/add').post(upload.single('photo'), (req, res) => {
     const stockIn = req.body.stockIn;
     const stockOut = req.body.stockOut;
     const unitPrice = Number(req.body.unitPrice);
-    const photo = req.file.filename;
+    const photo = req.body.photo;
 
     const newInventoryData = {
         itemId,
@@ -68,7 +68,7 @@ router.route("/update/:id").put(upload.single('photo') , async (req , res)=>{  /
     const stockIn = req.body.stockIn;
     const stockOut = req.body.stockOut;
     const unitPrice = Number(req.body.unitPrice);
-    const photo = req.file.filename;
+    const photo = req.body.photo;
 
 
     const updateInventory = {itemId , itemName , stock , stockIn , photo , stockOut , unitPrice};

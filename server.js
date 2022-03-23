@@ -28,3 +28,7 @@ app.use(express.json());
 app.listen(PORT, () =>{
     console.log(`server is up and running port on number ${PORT}`);
 }) 
+
+app.use("/assistant", require("./BACKEND/routes/assistant"));
+
+app.use("/inventory", require("./BACKEND/routes/inventory"));
