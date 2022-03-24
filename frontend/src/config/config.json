@@ -7,6 +7,10 @@
     "customer":{
         "email" :"udari1999@gmail.com",
         "password" : "udari1234"
+    },
+
+    "marketing":{
+        "email" :"uththara2000@gmail.com",
+        "password" : "uththara1234"
     }
-   
 }

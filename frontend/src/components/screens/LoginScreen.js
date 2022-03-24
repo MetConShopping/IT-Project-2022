@@ -29,6 +29,10 @@ const LoginScreen = ()=>{
            else if(email === config.customer.email && password === config.customer.password){
             history("/");  
            }
+
+           else if(email === config.marketing.email && password === config.marketing.password){
+            history("/");  
+           }
            else 
                 alert("Invalide credentials")
             
