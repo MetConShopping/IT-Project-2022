@@ -9,8 +9,17 @@
         "password" : "udari1234"
     },
 
+
     "marketing":{
         "email" :"uththara2000@gmail.com",
         "password" : "uththara1234"
     }
+
+    "supplier":{
+        "email" :"hiruni1999@gmail.com",
+        "password" : "hiruni1234"
+    }
+
+   
+
 }
