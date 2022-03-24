@@ -7,6 +7,11 @@
     "customer":{
         "email" :"udari1999@gmail.com",
         "password" : "udari1234"
+    },
+    "supplier":{
+        "email" :"hiruni1999@gmail.com",
+        "password" : "hiruni1234"
     }
+
    
 }
