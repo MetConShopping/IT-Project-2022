@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import "./hover.css";
 
 
 export default function DisplayInventory() {
@@ -45,28 +46,32 @@ export default function DisplayInventory() {
     </div>
   </nav>
     <div className="App stockImage2">
-      <h1 style ={{color:"white"}}>All Item</h1>
-
+      <br/>
+      <center>
+      <h1 style ={{color:"white", fontSize:"30px"}}>All Item</h1>
+      </center>
       {/* Fetch data from API */}
-      <div>
-        <button className="fetch-button" onClick={fetchData} style={{color:"white"}}>
+      <div> <center>
+        <button className="fetch-button button" onClick={fetchData}>
         <i class="fa fa-file-archive-o" aria-hidden="true"></i> Fetch Item
         </button>
         <br />
+        </center>
       </div>
-
+      <br />
       {/* Display data from API */}
-      <div className="students" style = {{width: "80%", marginLeft: "170px"}}>
+      <div className="students" style = {{ marginLeft: "170px"}}>
         {Inventories &&
           Inventories.map((Inventorie, index) => {
             return (
-              <div className="student" style={{background:"#DCDCDC"}} key={index}>
+              <p style={{display:"inline-block",marginLeft:"60px"}}>
+              <div className="student" style={{background:"#DCDCDC",marginRight:"50px",width:"350px",height:"320px",marginTop:"30px"}} key={index}>
                 <h3 className="badge bg-success">Item {index + 1}</h3>
 
                 <div className="details">
                   <div>
                     <div style={{float:"right"}}>
-                      <img src ={"images/" + Inventorie.photo} style={{width:"200px" , height:"200px"}}
+                      <img src ={"images/" + Inventorie.photo} style={{width:"180px" , height:"180px"}}
                       className = "border border-danger rounded-circle"
                       />
                     </div>
@@ -78,14 +83,16 @@ export default function DisplayInventory() {
                     <p ><b style={{color:"green"}}>Unit Price   : </b>{Inventorie.unitPrice}</p>
                   </div>
                 
-                  <a href="/editInven-stock"><button className="btn btn-secondary">Edit</button></a>
+                  <Link to="/view"><button className="btn btn-secondary">View</button></Link>
                   
     
                 </div>
               </div>
+              </p>
             );
           })}
-      </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
    </div>
   );
