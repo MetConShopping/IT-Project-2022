@@ -27,7 +27,7 @@ const LoginScreen = ()=>{
            }
 
            else if(email === config.customer.email && password === config.customer.password){
-            history("/");  
+            history("/staff-customer");  
            }
 
 
