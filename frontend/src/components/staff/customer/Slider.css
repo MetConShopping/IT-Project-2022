@@ -1,0 +1,45 @@
+
+.stockImage {
+    /* The image used */
+    background-image: url("");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  
+  .stockImage2 {
+    /* The image used */
+    background-image: url("");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .each-slidestock > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      height: 900px;
+  
+    }
+    
+    .each-slidestock span {
+      padding: 20px;
+      font-size: 20px;
+      background: #efefef;
+      text-align: center;
+    }
+  
+    

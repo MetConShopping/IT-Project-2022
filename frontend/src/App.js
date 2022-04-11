@@ -16,6 +16,8 @@ import Report from "./components/staff/stock/report";
 import InventoryList from "./components/staff/stock/InventoryList";
 import IReport from "./components/staff/stock/InvenReport";
 import Edit from "./components/staff/stock/EditeAssistant";
+import HeaderCustomer from "./components/staff/customer/Header";
+import HomeCustomer from "./components/staff/customer/HomeCustomer";
 
 
 
@@ -42,7 +44,8 @@ function App() {
         <Route path = "/edit" element={[<Edit/>]}/>
         
         
-        
+        <Route path = "/staff-customer" element={[<HeaderCustomer/> , <HomeCustomer/>]} />
+
         </Routes>
       </Router>
     </div>
