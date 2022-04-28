@@ -45,7 +45,7 @@ const AddEnventory = () => {
              .then(res => {
                 console.log(res);
                 setLoading(false);
-                toast("Success! Assistant Added");
+                toast("Success! inventory Added");
                 setNewUser({itemName :'' , itemId : '' , stock : '' , stockIn : '' , stockOut : '' , unitPrice : '' , photo : ''})
              })
              .catch(err => {
@@ -114,7 +114,7 @@ const AddEnventory = () => {
                     className="form-control"
                     name="itemId"
                     value={newUser.itemId}
-                    onChange={handleChange} required  pattern="[A-Za-z]{0-9}"
+                    onChange={handleChange} required  pattern="[A-Za-z]{0-9}+"
                 /><br/>
                 <label for="stock" className="form-label">Stock <span class = "required">*</span></label>
                 <input 

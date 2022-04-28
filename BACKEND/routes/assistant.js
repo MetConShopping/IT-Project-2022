@@ -99,7 +99,7 @@ router.route("/get/:id").get(async (req , res)=>{  //search data
 
     await Assistant.findById(AssistantID)
     .then((students)=>{
-        res.status(200).send({students});
+        res.json(students);
 
     }).catch((err)=>{
         console.log(err);
