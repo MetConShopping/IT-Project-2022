@@ -3,6 +3,7 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import TableRow from './TableRow';
 import {Link} from "react-router-dom";
+
 export default class AssistantList extends Component {
 
   constructor(props) {

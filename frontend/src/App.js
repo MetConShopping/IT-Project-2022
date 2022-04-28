@@ -11,7 +11,6 @@ import AddEnventory from "./components/staff/stock/inventory";
 import DisplayAssistant from "./components/staff/stock/DisplayAssistant";
 import DisplayInventory from "./components/staff/stock/DisplayInventory";
 import AssistantList from "./components/staff/stock/List";
-// import AssistantEdite from "./components/staff/stock/EditeAssistant";
 import Report from "./components/staff/stock/report";
 import InventoryList from "./components/staff/stock/InventoryList";
 import IReport from "./components/staff/stock/InvenReport";
@@ -39,7 +38,7 @@ function App() {
         <Route path = "/report" element={[<Report/>]}/>
         <Route path = "/view" element={[<InventoryList/>]}/>
         <Route path = "/irepot" element={[<IReport/>]}/>
-        <Route path = "/edit" element={[<Edit/>]}/>
+        <Route path = "/edit/:id" element={[<Edit/>]}/>
         
         
         
