@@ -89,16 +89,16 @@ const EditeAssistant = () => {
                 <Link className="nav-link" to="/add-stock" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Assistant</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/display-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistant</Link>
+                <Link className="nav-link" to="/display-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistants</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/addInven-stock" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Inventory</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " to="/displayInven-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventory</Link>
+                <Link className="nav-link " to="/displayInven-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Edit Assistant</Link>
+                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Assistant</Link>
               </li>
             </ul>
           </div>
