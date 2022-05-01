@@ -45,7 +45,7 @@ const AddEnventory = () => {
              .then(res => {
                 console.log(res);
                 setLoading(false);
-                toast("Success! Assistant Added");
+                toast("Success! inventory Added");
                 setNewUser({itemName :'' , itemId : '' , stock : '' , stockIn : '' , stockOut : '' , unitPrice : '' , photo : ''})
              })
              .catch(err => {
@@ -83,13 +83,13 @@ const AddEnventory = () => {
               <Link className="nav-link" to = "/add-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Assistant</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistant</Link>
+              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistants</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link active" to = "/addInven-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Inventory</Link>
             </li> 
             <li className="nav-item">
-                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventory</Link>
+                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
             </li> 
           </ul>
           </div>
@@ -114,7 +114,7 @@ const AddEnventory = () => {
                     className="form-control"
                     name="itemId"
                     value={newUser.itemId}
-                    onChange={handleChange} required  pattern="[A-Za-z]{0-9}"
+                    onChange={handleChange} required  pattern="[A-Za-z]{0-9}+"
                 /><br/>
                 <label for="stock" className="form-label">Stock <span class = "required">*</span></label>
                 <input 
