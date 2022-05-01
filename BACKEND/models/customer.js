@@ -27,16 +27,23 @@ const CustomerSchema = new Schema({
         required: true,
         trim: true
     },
+
+    photo: {
+        type: String
+    },
+    
     address: {
         type: String,
         required: true,
         trim: true
     },
+
     contactNo: {
         type: Number,
         required: true,
         trim: true
     },
+
     email: {
         type: String,
         required: true,
