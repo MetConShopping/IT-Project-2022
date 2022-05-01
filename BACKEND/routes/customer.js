@@ -1,8 +1,30 @@
 const router = require('express').Router();
+const multer = require('multer');
+const { v4: uuidv4 } = require('uuid');
 let path = require('path');
 let Customer = require('../models/customer');
 
-router.route('/add').post((req, res) => {
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './frontend/public/images');
+    },
+    filename: function(req, file, cb) {   
+        cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const fileFilter = (req, file, cb) => {
+    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if(allowedFileTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+let upload = multer({ storage, fileFilter });
+
+router.route('/add').post(upload.single('photo'), (req, res) => {
     const nic = req.body.nic;
     const name = req.body.name;
     const age = Number(req.body.age);
@@ -10,6 +32,7 @@ router.route('/add').post((req, res) => {
     const address = req.body.address;
     const contactNo = Number(req.body.contactNo);
     const email = req.body.email;
+    const photo = req.file.filename;
 
     const newCustomerData = {
         nic,
@@ -18,7 +41,8 @@ router.route('/add').post((req, res) => {
         gender,
         address,
         contactNo,
-        email
+        email,
+        photo
     }
 
     const newCustomer = new Customer(newCustomerData);
@@ -38,8 +62,8 @@ router.route("/").get((req , res)=>{ //route for display all
 
 });
 
-router.route("/update/:nic").put(async (req , res)=>{  //update data
-    let cusNic = req.params.nic;
+router.route("/update/:id").put(upload.single('photo') , async (req , res)=>{  //update data
+    let CustomerID = req.params.id;
     const nic = req.body.nic;
     const name = req.body.name;
     const age = req.body.age;
@@ -47,10 +71,11 @@ router.route("/update/:nic").put(async (req , res)=>{  //update data
     const address = req.body.address;
     const contactNo = req.body.contactNo;
     const email = req.body.email;
+    const photo = req.file.filename;
 
-    const updateCustomer = {nic, name , age , gender , address, contactNo, email};
+    const updateCustomer = {nic, name , age , gender , address, contactNo, email, photo};
 
-    await Customer.findOneAndUpdate({nic:cusNic}, updateCustomer)
+    await Customer.findByIdAndUpdate({CustomerID}, updateCustomer)
     .then(()=>{
         res.status(200).send({status : "Customer Updated"});
     }).catch((err)=>{
@@ -74,7 +99,7 @@ router.route("/delete/:nic").delete(async (req , res)=>{  //delete data
 router.route("/get/:nic").get(async (req , res)=>{  //search data
     let cusNic = req.params.nic;
 
-    await Customer.findOne({nic:cusNic})
+    await Customer.findB({nic:cusNic})
     .then((customer)=>{
         res.status(200).send({customer});
 

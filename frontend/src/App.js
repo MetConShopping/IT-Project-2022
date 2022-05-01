@@ -17,7 +17,11 @@ import IReport from "./components/staff/stock/InvenReport";
 import Edit from "./components/staff/stock/EditeAssistant";
 import HeaderCustomer from "./components/staff/customer/Header";
 import HomeCustomer from "./components/staff/customer/HomeCustomer";
-
+import AddCustomer from "./components/staff/customer/AddCustomer";
+import DisplayCustomer from "./components/staff/customer/DisplayCustomer";
+import CustomerList from "./components/staff/customer/CustomerList";
+import CustomerReport from "./components/staff/customer/CustomerReport";
+import EditCustomer from "./components/staff/customer/EditCustomer";
 
 
 
@@ -44,6 +48,12 @@ function App() {
         
         
         <Route path = "/staff-customer" element={[<HeaderCustomer/> , <HomeCustomer/>]} />
+        <Route path = "/add-customer" element={[<AddCustomer/>]}/>
+        <Route path = "/display-customer" element={[<DisplayCustomer/>]} />
+        <Route path = "/edit-customer" element={[<CustomerList/>]} />
+        <Route path = "/customerreport" element={[<CustomerReport/>]} />
+        <Route path = "/editcustomer" element={[<EditCustomer/>]} />
+        
 
         </Routes>
       </Router>
