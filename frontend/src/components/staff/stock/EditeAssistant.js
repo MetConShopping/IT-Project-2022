@@ -150,7 +150,7 @@ const EditeAssistant = () => {
               className="form-control"
               name="phone"
               value={newUser.phone}
-              onChange={handleChange} required pattern="[0-9]{10}"
+              onChange={handleChange} required pattern="[0-9]{9}"
             /><br />
             <label for="email" className="form-label">Email <span class="required">*</span></label>
             <input
