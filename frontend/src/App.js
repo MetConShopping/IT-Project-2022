@@ -15,6 +15,7 @@ import Report from "./components/staff/stock/report";
 import InventoryList from "./components/staff/stock/InventoryList";
 import IReport from "./components/staff/stock/InvenReport";
 import Edit from "./components/staff/stock/EditeAssistant";
+import EditInventory from "./components/staff/stock/EditInventory";
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path = "/view" element={[<InventoryList/>]}/>
         <Route path = "/irepot" element={[<IReport/>]}/>
         <Route path = "/edit/:id" element={[<Edit/>]}/>
+        <Route path = "/edit-item/:id" element={[<EditInventory/>]}/>
         
         
         

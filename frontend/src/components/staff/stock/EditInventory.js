@@ -7,7 +7,7 @@ import "./Slider.css"
 
 
 
-const EditeAssistant = () => {
+const EditInventory = () => {
 
   const [loading, setLoading] = useState(false); //additional 
   const [isError, setIsError] = useState(false);
@@ -17,18 +17,19 @@ const EditeAssistant = () => {
 
   const [newUser, setNewUser] = useState(
     {
-      name: '',
-      age: '',
-      gender: '',
-      phone: '',
-      address: '',
-      email: '',
+      itemName: '',
+      itemId: '',
+      stock: '',
+      stockIn: '',
+      stockOut: '',
+      unitPrice: '',
       photo: '',
     }
   );
 
   useEffect(() => {
-    (async () => await fetch(`http://localhost:8070/assistant/get/${id}`).then((res) => res.json()).then(json => setNewUser(json)))()
+    (async () => await fetch(`http://localhost:8070/inventory/get/${id}`).then((res) => res.json()).then(json => setNewUser(json)))()
+    
   }, [])
 
   const handleSubmit = (e) => {
@@ -40,19 +41,19 @@ const EditeAssistant = () => {
 
     const formData = new FormData();
     formData.append('photo', newUser.photo);
-    formData.append('phone', newUser.phone);
-    formData.append('name', newUser.name);
-    formData.append('age', newUser.age);
-    formData.append('gender', newUser.gender);
-    formData.append('address', newUser.address);
-    formData.append('email', newUser.email);
+    formData.append('itemName', newUser.itemName);
+    formData.append('ItemId', newUser.itemId);
+    formData.append('stock', newUser.stock);
+    formData.append('stockIn', newUser.stockIn);
+    formData.append('stockOut', newUser.stockOut);
+    formData.append('unitPrice', newUser.unitPrice);
 
-    axios.put(`http://localhost:8070/assistant/update/${id}`, formData) //update assistant data
+    axios.put(`http://localhost:8070/inventory/update/${id}`, formData) //update Inventory data
       .then(res => {
         console.log(res);
         setLoading(false);
         toast("Success! Assistant Updated");
-        setNewUser({ name: '', age: '', gender: '', phone: '', addreass: '', email: '', photo: '' })
+        setNewUser({ itemName: '', ItemId: '', stock: '', stockIn: '', stockOut: '', unitPrice: '', photo: '' })
       })
       .catch(err => {
         console.log(err);
@@ -98,78 +99,78 @@ const EditeAssistant = () => {
                 <Link className="nav-link " to="/displayInven-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Assistant</Link>
+                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Inventory</Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
-        <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "40%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
+        <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "35%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
           <div className="cmb-3"><br />
-            <label for="name" className="form-label" style={{color:"black", marginLeft:"25px"}}>Name <span class="required">*</span></label>
+            <label for="itemName" className="form-label" style={{color:"black"}}>Item Name <span class="required">*</span></label>
             <input
-              style={{width:"70%", marginLeft:"25px"}}
+              style={{width:"70%"}}
               type="text"
               className="form-control"
-              placeholder="Enter the name"
-              name="name"
-              value={newUser.name}
+              placeholder="Enter Item Name"
+              name="itemName"
+              value={newUser.itemName}
               onChange={handleChange} required pattern="[A-Za-z]+"
             /><br />
-            <label for="age" className="form-label" style={{color:"black", marginLeft:"25px"}}>Age <span class="required">*</span></label>
+            <label for="itemId" className="form-label" style={{color:"black"}}>Item Id <span class="required">*</span></label>
             <input
-              style={{width:"70%", marginLeft:"25px"}}
+             style={{width:"70%"}}
               type="text"
-              placeholder="Enter the age"
+              placeholder="Enter the ItemId"
               className="form-control"
-              name="age"
-              value={newUser.age}
-              onChange={handleChange} required pattern="[0-9]{1,3}"
+              name="itemId"
+              value={newUser.itemId}
+              onChange={handleChange} required pattern="[0-9][A-Za-z]{1,5}+"
             /><br />
-            <label for="gender" className="form-label" style={{color:"black", marginLeft:"25px"}}>Gender <span class="required">*</span></label>
+            <label for="stock" className="form-label" style={{color:"black"}}>Stock <span class="required">*</span></label>
             <input
-              style={{width:"70%", marginLeft:"25px"}}
+             style={{width:"70%"}}
               type="text"
-              placeholder="Enter the gender"
+              placeholder="Enter the stock"
               className="form-control"
-              name="gender"
-              value={newUser.gender}
-              onChange={handleChange} required pattern="[A-Za-z]+"
+              name="stock"
+              value={newUser.stock}
+              onChange={handleChange} required pattern="[0-9]+"
             /><br />
-            <label for="address" className="form-label" style={{color:"black", marginLeft:"25px"}}>Address <span class="required">*</span></label>
-            <textarea
-              style={{width:"70%", marginLeft:"25px"}}
-              rows="5" cols="50"
-              placeholder="Enter the address"
+            <label for="stockIn" className="form-label" style={{color:"black"}}>Stock In <span class="required">*</span></label>
+            <input
+             style={{width:"70%"}}
+              type="text"
+              placeholder="Enter the stockIn"
               className="form-control"
-              name="address"
-              value={newUser.address}
+              name="stockIn"
+              value={newUser.stockIn}
               onChange={handleChange} required
             /><br />
-            <label for="phone" className="form-label" style={{color:"black", marginLeft:"25px"}}>Phone <span class="required">*</span></label>
+            <label for="stockOut" className="form-label" style={{color:"black"}}>Stock Out <span class="required">*</span></label>
             <input
-              style={{width:"70%", marginLeft:"25px"}}
+             style={{width:"70%"}}
               type="text"
-              placeholder="Enter the phone"
+              placeholder="Enter the stock Out"
               className="form-control"
-              name="phone"
-              value={newUser.phone}
-              onChange={handleChange} required pattern="[0-9]{9}"
+              name="stockOut"
+              value={newUser.stockOut}
+              onChange={handleChange} required pattern="[0-9]+"
             /><br />
-            <label for="email" className="form-label" style={{color:"black", marginLeft:"25px"}}>Email <span class="required">*</span></label>
+            <label for="unitPrice" className="form-label" style={{color:"black"}}>Unit Price <span class="required">*</span></label>
             <input
-              style={{width:"70%", marginLeft:"25px"}}
+             style={{width:"70%"}}
               type="text"
-              placeholder="Enter the email"
+              placeholder="Enter the Unit Price"
               className="form-control"
-              name="email"
-              value={newUser.email}
-              onChange={handleChange} required pattern="[0-9a-zA-Z%&$@.]+@[a-zA-Z]+\.+[a-zA-Z]{2,3}"
+              name="unitPrice"
+              value={newUser.unitPrice}
+              onChange={handleChange} required pattern="[0-9.]+"
             />
           </div><br />
 
-          <h3 className="display-4" style={{ color: "black", fontSize: "40px" }}>Upload a Photo of Assistant</h3> <br />
+          <h3 className="display-4" style={{ color: "black", fontSize: "40px" }}>Upload a Photo of Item</h3> <br />
           <p className="lead" style={{ color: "black", fontSize: "13px" }}>
             Please choose a valid relavant photo
 
@@ -204,4 +205,4 @@ const EditeAssistant = () => {
   );
 }
 
-export default EditeAssistant;
+export default EditInventory;

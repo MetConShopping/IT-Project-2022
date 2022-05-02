@@ -96,10 +96,11 @@ const AddEnventory = () => {
         </div>
       </nav>
         <div className="stockImage"  style={{width:"100%"}}  ><br/><br/><br/>
-            <form onSubmit={handleSubmit} encType='multipart/form-data' style={{width:"50%" , marginLeft:"auto" , marginRight:"auto" , display:"block" , background:"black" , padding:" 10px 10px 10px 10px" , opacity:"0.8"}}>
+            <form onSubmit={handleSubmit} encType='multipart/form-data' style={{width:"40%" , marginLeft:"auto" , marginRight:"auto" , display:"block" , background:"#ccffff" , padding:" 10px 10px 10px 10px" , opacity:"0.8"}}>
             <div className="cmb-3"><br/>
-                <label for="itemName" className="form-label">Item Name <span class = "required">*</span></label>
+                <label for="itemName" className="form-label" style={{color:"black", marginLeft:"25px"}}>Item Name <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     className="form-control"
                     placeholder="Enter the name"
@@ -107,8 +108,9 @@ const AddEnventory = () => {
                     value={newUser.itemName}
                     onChange={handleChange} required pattern = "[A-Za-z]+"
                 /><br/>
-                <label for="itemId" className="form-label">Item Id <span class = "required">*</span></label>
+                <label for="itemId" className="form-label" style={{color:"black", marginLeft:"25px"}}>Item Id <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the id"
                     className="form-control"
@@ -116,8 +118,9 @@ const AddEnventory = () => {
                     value={newUser.itemId}
                     onChange={handleChange} required  pattern="[A-Za-z]{0-9}+"
                 /><br/>
-                <label for="stock" className="form-label">Stock <span class = "required">*</span></label>
+                <label for="stock" className="form-label" style={{color:"black", marginLeft:"25px"}}>Stock <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the stock"
                     className="form-control"
@@ -125,8 +128,9 @@ const AddEnventory = () => {
                     value={newUser.stock}
                     onChange={handleChange} required pattern = "[0-9]+"
                 /><br/> 
-                <label for="stockIn" className="form-label" >StockIn <span class = "required">*</span></label>
+                <label for="stockIn" className="form-label" style={{color:"black", marginLeft:"25px"}}>StockIn <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the stockIn"
                     className="form-control"
@@ -134,8 +138,9 @@ const AddEnventory = () => {
                     value={newUser.stockIn}
                     onChange={handleChange} required pattern = "[0-9]+"
                 /><br/>
-                <label for="stockOut" className="form-label">StockOut <span class = "required">*</span></label>  
+                <label for="stockOut" className="form-label" style={{color:"black", marginLeft:"25px"}}>StockOut <span class = "required">*</span></label>  
                  <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the stockOut"
                     className="form-control"
@@ -143,8 +148,9 @@ const AddEnventory = () => {
                     value={newUser.stockOut}
                     onChange={handleChange} required pattern = "[0-9]+"
                 /><br/>
-                <label for="unitPrice" className="form-label">Unit Price <span class = "required">*</span></label>  
+                <label for="unitPrice" className="form-label" style={{color:"black", marginLeft:"25px"}}>Unit Price <span class = "required">*</span></label>  
                  <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the unitPrice"
                     className="form-control"
@@ -154,8 +160,8 @@ const AddEnventory = () => {
                 />   
             </div><br/>
             
-                <h3 className="display-4" style={{color:"white", fontSize:"40px"}}>Upload a Photo of Inventory</h3> <br/>
-                <p className="lead" style={{color:"white", fontSize:"13px"}}>
+                <h3 className="display-4" style={{color:"black", fontSize:"40px"}}>Upload a Photo of Inventory</h3> <br/>
+                <p className="lead" style={{color:"black", fontSize:"13px"}}>
                 Please choose a valid relavant photo
                
                 <i class="fa fa-folder-open" aria-hidden="true" style={{marginLeft:"10px"}}></i>
@@ -170,7 +176,7 @@ const AddEnventory = () => {
             <div>
                      {isError && <small className="mt-3 d-inline-block text-danger">Something went wrong. Please try again later.</small>}
                      {/*decision*/}
-                     <button style={{marginLeft:"230px"}}
+                     <button style={{marginLeft:"200px"}}
                         type="submit"
                         className="btn btn-primary mt-3"
                         disabled={loading}
