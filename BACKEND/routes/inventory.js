@@ -100,7 +100,7 @@ router.route("/get/:id").get(async (req , res)=>{  //search data
 
     await Inventory.findById(InventoryID)
     .then((Inventorys)=>{
-        res.status(200).send({Inventorys});
+        res.json(Inventorys);
 
     }).catch((err)=>{
         console.log(err);

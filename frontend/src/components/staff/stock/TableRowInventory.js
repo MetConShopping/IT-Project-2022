@@ -34,7 +34,7 @@ export default class TableRowInventory extends Component {
                 className = "border border-danger rounded-circle"
                 /></td>
                 <td style={{width:"270px"}}>
-                    <Link className="edit-link" to={`/editInven-stockM/${this.props.obj._id}/${this.props.obj.itemId}/${this.props.obj.itemName}/${this.props.obj.stock}/${this.props.obj.stockIn}/${this.props.obj.stockOut}/${this.props.obj.unitPrice}/${this.props.obj.date}/${this.props.obj.photo}`}>
+                <Link className="edit-link" to={`/edit-item/${this.props.obj._id}`}>
                         <Button size="sm" variant="success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</Button>
                     </Link >
                         {" "}

@@ -28,6 +28,10 @@ function Header(){
                 <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
             </li> 
           </ul>
+          <Link
+              to={"/"}>
+          <button className="btn btn-outline-success" type="submit" style={{ fontSize: "12px", marginLeft:"200px", width:"100px",height:"13px"}}><i class="fa fa-sign-out"></i>Logout</button>
+          </Link>
         </div>
       </div>
     </nav>
