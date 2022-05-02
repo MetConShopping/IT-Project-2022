@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const cors = require("cors")
 const dotenv = require("dotenv");
 
@@ -32,3 +33,5 @@ app.listen(PORT, () =>{
 app.use("/assistant", require("./BACKEND/routes/assistant"));
 
 app.use("/inventory", require("./BACKEND/routes/inventory"));
+
+app.use("/customer", require("./BACKEND/routes/customer"));
