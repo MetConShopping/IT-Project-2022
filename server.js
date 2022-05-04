@@ -35,3 +35,6 @@ app.use("/assistant", require("./BACKEND/routes/assistant"));
 app.use("/inventory", require("./BACKEND/routes/inventory"));
 
 app.use("/customer", require("./BACKEND/routes/customer"));
+
+app.use("/supplier", require("./BACKEND/routes/supplier"));
+
