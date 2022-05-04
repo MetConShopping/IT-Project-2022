@@ -21,11 +21,19 @@ import EditInventory from "./components/staff/stock/EditInventory";
 
 import HeaderCustomer from "./components/staff/customer/Header";
 import HomeCustomer from "./components/staff/customer/HomeCustomer";
+
+import SupplierHeader from "./components/staff/supplier/SupplierHeader";
+import SupplierHome from "./components/staff/supplier/SupplierHome";
+import AddSupplier from "./components/staff/supplier/AddSupplier";
+import DisplaySupplier from "./components/staff/supplier/DisplaySupplier";
+import SupplierList from "./components/staff/supplier/SupplierList";
+
 import AddCustomer from "./components/staff/customer/AddCustomer";
 import DisplayCustomer from "./components/staff/customer/DisplayCustomer";
 import CustomerList from "./components/staff/customer/CustomerList";
 import CustomerReport from "./components/staff/customer/CustomerReport";
 import EditCustomer from "./components/staff/customer/EditCustomer";
+
 
 
 
@@ -59,6 +67,23 @@ function App() {
         <Route path = "/edit-customer" element={[<CustomerList/>]} />
         <Route path = "/customerreport" element={[<CustomerReport/>]} />
         <Route path = "/editcustomer" element={[<EditCustomer/>]} />
+        
+
+
+        <Route path = "/staff-supplier" element={[<SupplierHeader/> , <SupplierHome/>]} />
+        <Route path = "/add-supplier" element={[<AddSupplier/>]} />
+        <Route path ="/display-supplier" element={[<DisplaySupplier/>]} />
+        <Route path = "/edit-supplier" element={[<SupplierList/>]} />
+
+
+
+        
+        
+        
+
+        
+
+
         
 
         </Routes>
