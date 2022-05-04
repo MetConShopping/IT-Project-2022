@@ -83,23 +83,24 @@ const AddAssistant = () => {
               <Link className="nav-link active" to = "/add-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Assistant</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistant</Link>
+              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistants</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to = "/addInven-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Inventory</Link>
             </li> 
             <li className="nav-item">
-                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventory</Link>
+                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
             </li> 
           </ul>
           </div>
         </div>
       </nav>
         <div className="stockImage"  style={{width:"100%"}}  ><br/><br/><br/>
-            <form onSubmit={handleSubmit} encType='multipart/form-data' style={{width:"50%" , marginLeft:"auto" , marginRight:"auto" , display:"block" , background:"black" , padding:" 10px 10px 10px 10px" , opacity:"0.8"}}>
+            <form onSubmit={handleSubmit} encType='multipart/form-data' style={{width:"40%" , marginLeft:"auto" , marginRight:"auto" , display:"block" , background:"#ccffff" , padding:" 10px 10px 10px 10px" , opacity:"0.8"}}>
             <div className="cmb-3"><br/>
-                <label for="name" className="form-label">Name <span class = "required">*</span></label>
+                <label for="name" className="form-label" style={{color:"black", marginLeft:"25px"}}>Name <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     className="form-control"
                     placeholder="Enter the name"
@@ -107,8 +108,9 @@ const AddAssistant = () => {
                     value={newUser.name}
                     onChange={handleChange} required pattern = "[A-Za-z]+"
                 /><br/>
-                <label for="age" className="form-label">Age <span class = "required">*</span></label>
+                <label for="age" className="form-label" style={{color:"black", marginLeft:"25px"}}>Age <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the age"
                     className="form-control"
@@ -116,8 +118,9 @@ const AddAssistant = () => {
                     value={newUser.age}
                     onChange={handleChange} required  pattern="[0-9]{1,3}"
                 /><br/>
-                <label for="gender" className="form-label">Gender <span class = "required">*</span></label>
+                <label for="gender" className="form-label" style={{color:"black", marginLeft:"25px"}}>Gender <span class = "required">*</span></label>
                 <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the gender"
                     className="form-control"
@@ -125,8 +128,9 @@ const AddAssistant = () => {
                     value={newUser.gender}
                     onChange={handleChange} required pattern = "[A-Za-z]+"
                 /><br/> 
-                <label for="address" className="form-label" >Address <span class = "required">*</span></label>
+                <label for="address" className="form-label" style={{color:"black", marginLeft:"25px"}}>Address <span class = "required">*</span></label>
                 <textarea 
+                    style={{width:"80%", marginLeft:"25px"}}
                     rows = "5" cols = "50"
                     placeholder="Enter the address"
                     className="form-control"
@@ -134,8 +138,9 @@ const AddAssistant = () => {
                     value={newUser.address}
                     onChange={handleChange} required
                 /><br/>
-                <label for="phone" className="form-label">Phone <span class = "required">*</span></label>  
+                <label for="phone" className="form-label" style={{color:"black", marginLeft:"25px"}}>Phone <span class = "required">*</span></label>  
                  <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the phone"
                     className="form-control"
@@ -143,8 +148,9 @@ const AddAssistant = () => {
                     value={newUser.phone}
                     onChange={handleChange} required pattern = "[0-9]{10}"
                 /><br/>
-                <label for="email" className="form-label">Email <span class = "required">*</span></label>  
+                <label for="email" className="form-label" style={{color:"black", marginLeft:"25px"}}>Email <span class = "required">*</span></label>  
                  <input 
+                    style={{width:"80%", marginLeft:"25px"}}
                     type="text"
                     placeholder="Enter the email"
                     className="form-control"
@@ -154,8 +160,8 @@ const AddAssistant = () => {
                 />   
             </div><br/>
             
-                <h3 className="display-4" style={{color:"white", fontSize:"40px"}}>Upload a Photo of Assistant</h3> <br/>
-                <p className="lead" style={{color:"white", fontSize:"13px"}}>
+                <h3 className="display-4" style={{color:"black", fontSize:"40px"}}>Upload a Photo of Assistant</h3> <br/>
+                <p className="lead" style={{color:"black", fontSize:"13px"}}>
                 Please choose a valid relavant photo
                
                 <i class="fa fa-folder-open" aria-hidden="true" style={{marginLeft:"10px"}}></i>
@@ -170,7 +176,7 @@ const AddAssistant = () => {
             <div>
                      {isError && <small className="mt-3 d-inline-block text-danger">Something went wrong. Please try again later.</small>}
                      {/*decision*/}
-                     <button style={{marginLeft:"230px"}}
+                     <button style={{marginLeft:"200px"}}
                         type="submit"
                         className="btn btn-primary mt-3"
                         disabled={loading}

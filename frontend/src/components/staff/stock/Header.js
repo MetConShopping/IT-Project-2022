@@ -19,15 +19,19 @@ function Header(){
               <Link className="nav-link" to = "/add-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Assistant</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistant</Link>
+              <Link className="nav-link" to = "/display-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistants</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to = "/addInven-stock" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Inventory</Link>
             </li> 
             <li className="nav-item">
-                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventory</Link>
+                <Link className="nav-link" to = "/displayInven-stock" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
             </li> 
           </ul>
+          <Link
+              to={"/"}>
+          <button className="btn btn-outline-success" type="submit" style={{ fontSize: "12px", marginLeft:"200px", width:"100px",height:"13px"}}><i class="fa fa-sign-out"></i>Logout</button>
+          </Link>
         </div>
       </div>
     </nav>

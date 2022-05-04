@@ -69,13 +69,13 @@ export default class DisplayAssistant extends React.Component {
                   <Link className="nav-link" to="/add-stock" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Assistant</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active" to="/display-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistant</Link>
+                  <Link className="nav-link active" to="/display-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Assistants</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/addInven-stock" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Inventory</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/displayInven-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventory</Link>
+                  <Link className="nav-link" to="/displayInven-stock" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Inventories</Link>
                 </li>
               </ul>
               <form className="d-flex">
