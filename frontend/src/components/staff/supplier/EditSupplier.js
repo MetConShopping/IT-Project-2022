@@ -1,212 +1,207 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Box from "@mui/material/Box";
-import { NavLink, useParams } from "react-router-dom";
-import { TextField, Button } from "@mui/material";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import "./Slider.css"
 
 
-const Edit = () => {
-  const [supid, setSupid] = useState("");
-  const [fullname, setFullName] = useState("");
-  const [address, setAddress] = useState("");
-  const [experience, setExperience] = useState("");
-  const [itempurchesed, setItemPurchesed] = useState("");
-  const [loading, setLoading] = useState(false); //additional
 
-  const { id } = useParams();
+const EditSupplier = () => {
+
+  const [loading, setLoading] = useState(false); //additional 
+  const [isError, setIsError] = useState(false);
+
+  const { id } = useParams()
+
+
+  const [newUser, setNewUser] = useState(
+    {
+
+      supid: '',
+      fullname : '',
+      address : '',
+      eperience : '',
+      itempurchesed: '',
+      photo: '',
+      
+    }
+  );
 
   useEffect(() => {
-    //component mount
-    const getData = async () => {
-      await fetch(`/assistant/get/${id}`)
-        .then((res) => res.json())
-        .then((json) => {
-          setName(json.supid);
-          setAge(json.fullname);
-          setGender(json.address);
-          setAddress(json.experience);
-          setPhone(json.itempurchesed);
-        })
-        .catch((err) => alert(err));
-    };
-    getData();
-  }, []);
+    (async () => await fetch(`http://localhost:8070/supplier/get/${id}`).then((res) => res.json()).then(json => setNewUser(json)))()
+  }, [])
 
-  const editHandler = async (e) => {
-    // create handler for saving data to the db
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     setLoading(true);
+    setIsError(false); //additional
 
-    const config = {
-      //headers
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
 
-    try {
-      await axios.put(
-        //use axios API
-        `/assistant/update/${id}`,
-        {
-          supid,
-          fullname,
-          address,
-          experience,
-          itempurchesed
-        },
-        config
-      );
+    const formData = new FormData();
+    formData.append('supid', newUser.supid);
+    formData.append('fullname', newUser.fullname);
+    formData.append('address', newUser.address);
+    formData.append('experience', newUser.experience);
+    formData.append('itempurchesed', newUser.itempurchesed);
+    formData.append('photo', newUser.photo);
 
-      setTimeout(() => {
-        //set a time out
+    axios.put(`http://localhost:8070/supplier/update/${id}`, formData) //update assistant data
+      .then(res => {
+        console.log(res);
         setLoading(false);
-        alert("Success! Updated 😘");
-        setSupid("");
-        setFullName("");
-        setAddress("");
-        setExperience("");
-        setItemPurchesed("");
-        window.location.reload();
-      }, 5000); //5seconds timeout
-    } catch (error) {
-      alert(error);
-        setSupid("");
-        setFullName("");
-        setAddress("");
-        setExperience("");
-        setItemPurchesed("");
-      setLoading(false);
-    }
-  };
-  return (
-    <>
-      <div>
-        <Box
-          sx={{
-            px: 20,
-            py: 4,
-            color: "red",
-            border: 1,
-            borderColor: "primary.main",
-          }}
-        >
-          <div className=" inline-flex  mx-auto">
-            <div className=" mt-2 -translate-x-8">
-              <NavLink to="/view">
-                <Button variant="contained" color="primary">
-                  Back
-                </Button>
-              </NavLink>
-            </div>
-          </div>
-        </Box>
-        <div className=" text-4xl text-center mt-10">
-          Update Assistant <br />
-        </div>
-        <form onSubmit={editHandler}>
-          <div class="container px-36 py-24 mx-auto  mt-4">
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-              <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Name
-              </h1>
-              <TextField
-                id="outlined-basic"
-                label="Supid"
-                variant="outlined"
-                type="text"
-                value={supid}
-                onChange={(e) => setSupid(e.target.value)}
-                required
-              />
-            </div>
-            <br />
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-              <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Age
-              </h1>
-              <TextField
-                id="outlined-basic"
-                label="FullName"
-                variant="outlined"
-                type="text"
-                value={fullname}
-                onChange={(e) => setFullName(e.target.value)}
-                required
-              />
-            </div>
-            <br />
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-              <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Gender
-              </h1>
-             <br />
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Address
-              </h1>
-              <TextField
-                id="outlined-basic"
-                label="Address"
-                variant="outlined"
-                type="text"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                required
-              />
-              </div>
-              <br/>
-            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Phone
-              </h1>
-              <TextField
-                id="outlined-basic"
-                label="Experience"
-                variant="outlined"
-                type="text"
-                value={experience}
-                onChange={(e) => setExperience(e.target.value)}
-                required
-              />
-              </div>
-              <br/>
-               <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-black">
-                Email
-              </h1>
-              <TextField
-                id="outlined-basic"
-                label="itempurchesed"
-                variant="outlined"
-                type="text"
-                value={itempurchesed}
-                onChange={(e) => setItemPurchesed(e.target.value)}
-                required
-              />
-          </div>
-          </div>
-          <div className=" text-center mx-auto">
-            <div className=" -translate-y-10">
-              <Button
-                variant="contained"
-                color="success"
-                type="submit"
-                disabled={loading}
-              >
-                <h6 style={{ marginLeft: "5px" }}> </h6>{" "}
-                {loading ? "Updating..." : "Update"}
-              </Button>
-            </div>
-          </div>
-        </form>
-        <br />
-        <br />
-      </div>
-    </>
-  );
-};
+        toast("Success! supplier Updated");
+        setNewUser ({supid :'' , fullname : '' , address : '' , experience : '' , itempurchesed : '', photo : ''})
+      })
+      .catch(err => {
+        console.log(err);
+        setLoading(false);
+        setIsError(true);
+        toast(JSON.stringify(err));
 
-export default Edit;
+      });
+  }
+
+  const handleChange = (e) => {
+    setNewUser({ ...newUser, [e.target.name]: e.target.value });
+  }
+
+  const handlePhoto = (e) => {
+    setNewUser({ ...newUser, photo: e.target.files[0] });
+  }
+
+
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" >
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#" style={{ color: "#CD5C5C" }}><b>Supplier Management System</b></a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav nav-tabs">
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/staff-stock" style={{ color: "#008080" }}><i class="fa fa-fw fa-home"></i>Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-supplier" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Supplier</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/display-supplier" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Supplier</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/update-supplier" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Supplier</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link " to="/retun-supplier" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Update</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Assistant</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
+        <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "40%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
+          <div className="cmb-3"><br />
+            <label for="name" className="form-label" style={{color:"black", marginLeft:"25px"}}>Name <span class="required">*</span></label>
+            <input
+              style={{width:"70%", marginLeft:"25px"}}
+              type="text"
+              className="form-control"
+              placeholder="Enter the name"
+              name="name"
+              value={newUser.name}
+              onChange={handleChange} required pattern="[A-Za-z]+"
+            /><br />
+            <label for="age" className="form-label" style={{color:"black", marginLeft:"25px"}}>Age <span class="required">*</span></label>
+            <input
+              style={{width:"70%", marginLeft:"25px"}}
+              type="text"
+              placeholder="Enter the age"
+              className="form-control"
+              name="age"
+              value={newUser.age}
+              onChange={handleChange} required pattern="[0-9]{1,3}"
+            /><br />
+            <label for="gender" className="form-label" style={{color:"black", marginLeft:"25px"}}>Gender <span class="required">*</span></label>
+            <input
+              style={{width:"70%", marginLeft:"25px"}}
+              type="text"
+              placeholder="Enter the gender"
+              className="form-control"
+              name="gender"
+              value={newUser.gender}
+              onChange={handleChange} required pattern="[A-Za-z]+"
+            /><br />
+            <label for="address" className="form-label" style={{color:"black", marginLeft:"25px"}}>Address <span class="required">*</span></label>
+            <textarea
+              style={{width:"70%", marginLeft:"25px"}}
+              rows="5" cols="50"
+              placeholder="Enter the address"
+              className="form-control"
+              name="address"
+              value={newUser.address}
+              onChange={handleChange} required
+            /><br />
+            <label for="phone" className="form-label" style={{color:"black", marginLeft:"25px"}}>Phone <span class="required">*</span></label>
+            <input
+              style={{width:"70%", marginLeft:"25px"}}
+              type="text"
+              placeholder="Enter the phone"
+              className="form-control"
+              name="phone"
+              value={newUser.phone}
+              onChange={handleChange} required pattern="[0-9]{9}"
+            /><br />
+            <label for="email" className="form-label" style={{color:"black", marginLeft:"25px"}}>Email <span class="required">*</span></label>
+            <input
+              style={{width:"70%", marginLeft:"25px"}}
+              type="text"
+              placeholder="Enter the email"
+              className="form-control"
+              name="email"
+              value={newUser.email}
+              onChange={handleChange} required pattern="[0-9a-zA-Z%&$@.]+@[a-zA-Z]+\.+[a-zA-Z]{2,3}"
+            />
+          </div><br />
+
+          <h3 className="display-4" style={{ color: "black", fontSize: "40px" }}>Upload a Photo of Assistant</h3> <br />
+          <p className="lead" style={{ color: "black", fontSize: "13px" }}>
+            Please choose a valid relavant photo
+
+            <i class="fa fa-folder-open" aria-hidden="true" style={{ marginLeft: "10px" }}></i>
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              name="photo"
+              onChange={handlePhoto} required style={{ color: "#000000" }}
+            />
+          </p>
+          <img src={"/images/" + newUser.photo} style={{width:"200px"}} />
+
+          <div>
+            {isError && <small className="mt-3 d-inline-block text-danger">Something went wrong. Please try again later.</small>}
+            {/*decision*/}
+            <button style={{ marginLeft: "200px" }}
+              type="submit"
+              className="btn btn-primary mt-3"
+              disabled={loading}
+            ><i class="fa fa-upload" aria-hidden="true" ></i> {loading ? 'Uploading...' : 'Upload'}
+            </button>
+            <ToastContainer style={{ marginTop: "50px" }} />
+
+          </div>
+          <br />
+        </form>
+        <br /><br /><br />
+      </div>
+    </div>
+
+  );
+}
+
+export default EditSupplier;

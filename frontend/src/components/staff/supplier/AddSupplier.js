@@ -18,7 +18,7 @@ const AddSupplier = () => {
             supid: '',
             fullname : '',
             address : '',
-            eperience : '',
+            experience : '',
             itempurchesed: '',
             photo: '',
             
