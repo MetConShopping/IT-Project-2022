@@ -36,8 +36,8 @@ const LoginScreen = ()=>{
             history("/staff-marketing");  
            }
 
-            history("/");  
-           }
+             
+           
 
 
            else if (email === config.supplier.email && password === config.supplier.password){

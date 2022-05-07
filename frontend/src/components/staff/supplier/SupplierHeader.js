@@ -28,6 +28,7 @@ function SupplierHeader(){
           </ul>
         </div>
       </div>
+      <Link to="/"><button className="btn btn-primary">LogOut</button></Link>
     </nav>
     )
 }

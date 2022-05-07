@@ -60,6 +60,7 @@ export default class SupplierList extends Component {
                 </ul>
             </div>
             </div>
+            <Link to="/"><button className="btn btn-primary">LogOut</button></Link>
         </nav>
         <div className=" stockImage">
           <br/>

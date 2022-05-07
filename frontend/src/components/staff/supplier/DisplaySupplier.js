@@ -83,16 +83,18 @@ export default class DisplaySupplier extends React.Component {
               </form>
             </div>
           </div>
+          <Link to="/"><button className="btn btn-primary">LogOut</button></Link>
+
         </nav>
         <div className="App stockImage2" >
           <br />
-          <h1 style={{ color: "white", marginLeft: "500px" }}>All Supplier</h1><br />
+          <h1 style={{ color: "black", marginLeft: "500px" }}>All Supplier</h1><br />
 
           {/* Display data from API */}
           <div className="students" style={{marginLeft: "200px" }}>
             {this.state.filteredData.length === 0 ? (<div className="alert alert-danger" style={{ marginLeft: "300px", width: "20%"}}>
               <center>Data is not found<br /><br />
-                <img src="notfound.jpg" style={{ width: "70%" }} /></center> <br />
+                <img src="notf.png" style={{ width: "70%" }} /></center> <br />
             </div>
             ) : (this.state.filteredData.map(i =>{
               return(

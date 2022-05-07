@@ -99,6 +99,7 @@ const EditSupplier = () => {
             </ul>
           </div>
         </div>
+        <Link to="/"><button className="btn btn-primary">LogOut</button></Link>
       </nav>
       <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
         <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "40%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
