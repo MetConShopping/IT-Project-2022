@@ -2,17 +2,82 @@
 .stockImage {
     /* The image used */
     background-image: url("stock4.jpeg");
-  
     /* Full height */
     height: 100%;
-  
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   
   }
+  .stockImageadd {
+    /* The image used */
+    background-image: url("addst.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
   
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .itemImageadd {
+    /* The image used */
+    background-image: url("additem.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .displayImageassis {
+    /* The image used */
+    background-image: url("assistant.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .displayImageinven {
+    /* The image used */
+    background-image: url("displayInven.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .displayRow {
+    /* The image used */
+    background-image: url("displayRow.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .editBackground {
+    /* The image used */
+    background-image: url("editBackground.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+
   .stockImage2 {
     /* The image used */
     background-image: url("stock7.jpeg");

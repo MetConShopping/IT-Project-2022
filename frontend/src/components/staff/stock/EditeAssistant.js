@@ -104,7 +104,7 @@ const EditeAssistant = () => {
           </div>
         </div>
       </nav>
-      <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
+      <div className="editBackground" style={{ width: "100%" }}  ><br /><br /><br />
         <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "40%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
           <div className="cmb-3"><br />
             <label for="name" className="form-label" style={{color:"black", marginLeft:"25px"}}>Name <span class="required">*</span></label>

@@ -42,7 +42,7 @@ const EditInventory = () => {
     const formData = new FormData();
     formData.append('photo', newUser.photo);
     formData.append('itemName', newUser.itemName);
-    formData.append('ItemId', newUser.itemId);
+    formData.append('itemId', newUser.itemId);
     formData.append('stock', newUser.stock);
     formData.append('stockIn', newUser.stockIn);
     formData.append('stockOut', newUser.stockOut);
@@ -52,8 +52,8 @@ const EditInventory = () => {
       .then(res => {
         console.log(res);
         setLoading(false);
-        toast("Success! Assistant Updated");
-        setNewUser({ itemName: '', ItemId: '', stock: '', stockIn: '', stockOut: '', unitPrice: '', photo: '' })
+        toast("Success! inventory Updated");
+        setNewUser({ itemName: '', itemId: '', stock: '', stockIn: '', stockOut: '', unitPrice: '', photo: '' })
       })
       .catch(err => {
         console.log(err);
@@ -105,7 +105,7 @@ const EditInventory = () => {
           </div>
         </div>
       </nav>
-      <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
+      <div className="editBackground" style={{ width: "100%" }}  ><br /><br /><br />
         <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "35%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
           <div className="cmb-3"><br />
             <label for="itemName" className="form-label" style={{color:"black"}}>Item Name <span class="required">*</span></label>
@@ -116,7 +116,7 @@ const EditInventory = () => {
               placeholder="Enter Item Name"
               name="itemName"
               value={newUser.itemName}
-              onChange={handleChange} required pattern="[A-Za-z]+"
+              onChange={handleChange} required pattern="[A-Za-z-]+"
             /><br />
             <label for="itemId" className="form-label" style={{color:"black"}}>Item Id <span class="required">*</span></label>
             <input
@@ -126,7 +126,7 @@ const EditInventory = () => {
               className="form-control"
               name="itemId"
               value={newUser.itemId}
-              onChange={handleChange} required pattern="[0-9][A-Za-z]{1,5}+"
+              onChange={handleChange} required pattern="[A-Za-z]{0-9}+"
             /><br />
             <label for="stock" className="form-label" style={{color:"black"}}>Stock <span class="required">*</span></label>
             <input
@@ -146,7 +146,7 @@ const EditInventory = () => {
               className="form-control"
               name="stockIn"
               value={newUser.stockIn}
-              onChange={handleChange} required
+              onChange={handleChange} required pattern="[0-9]+"
             /><br />
             <label for="stockOut" className="form-label" style={{color:"black"}}>Stock Out <span class="required">*</span></label>
             <input

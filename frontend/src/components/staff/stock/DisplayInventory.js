@@ -45,7 +45,7 @@ export default function DisplayInventory() {
       </div>
     </div>
   </nav>
-    <div className="App stockImage2">
+    <div className="App displayImageinven">
       <br/>
       <center>
       <h1 style ={{color:"white", fontSize:"30px"}}>All Item</h1>
@@ -66,7 +66,7 @@ export default function DisplayInventory() {
             return (
               <p style={{display:"inline-block",marginLeft:"60px"}}>
               <div className="student" style={{background:"#DCDCDC",marginRight:"50px",width:"350px",height:"320px",marginTop:"30px"}} key={index}>
-                <h3 className="badge bg-success">Item {index + 1}</h3>
+                <h3 className="badge bg-success" style={{marginLeft:"10px"}}>Item {index + 1}</h3>
 
                 <div className="details">
                   <div>
@@ -75,15 +75,15 @@ export default function DisplayInventory() {
                       className = "border border-danger rounded-circle"
                       />
                     </div>
-                    <p ><b style={{color:"red"}}>Item Id   : </b>{Inventorie.itemId}</p>
-                    <p ><b style={{color:"green"}}>Item Name   : </b>{Inventorie.itemName}</p>
-                    <p ><b style={{color:"blue"}}>Stock   : </b>{Inventorie.stock}</p>
-                    <p ><b style={{color:"orange"}}>Stock In    : </b>{Inventorie.stockIn}</p>
-                    <p ><b style={{color:"red"}}>Stock Out   : </b>{Inventorie.stockOut}</p>
-                    <p ><b style={{color:"green"}}>Unit Price   : </b>{Inventorie.unitPrice}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"red"}}> Item Id   : </b>{Inventorie.itemId}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"green"}}> Item Name   : </b>{Inventorie.itemName}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"blue"}}> Stock   : </b>{Inventorie.stock}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"orange"}}> Stock In    : </b>{Inventorie.stockIn}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"red"}}> Stock Out   : </b>{Inventorie.stockOut}</p>
+                    <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"green"}}> Unit Price   : </b>{Inventorie.unitPrice}</p>
                   </div>
                 
-                  <Link to="/view"><button className="btn btn-secondary">View</button></Link>
+                  <Link to="/view"><button className="btn btn-secondary" style={{marginLeft:"250px"}}>View</button></Link>
                   
     
                 </div>
