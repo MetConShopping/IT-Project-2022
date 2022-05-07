@@ -31,7 +31,7 @@ router.route('/add').post(upload.single('photo'), (req, res) => {
     const address = req.body.address;
     const phone = Number(req.body.phone);
     const email = req.body.email;
-    const photo = req.body.photo;
+    const photo = req.file.filename;
 
     const newAssistantData = {
         name,
@@ -68,7 +68,7 @@ router.route("/update/:id").put(upload.single('photo') , async (req , res)=>{  /
     const address = req.body.address;
     const phone = req.body.phone;
     const email = req.body.email;
-    const photo = req.body.photo;
+    const photo = req.file.filename;
 
     const updateStudent = {name , age , gender , address, phone, email, photo};
 
@@ -99,7 +99,7 @@ router.route("/get/:id").get(async (req , res)=>{  //search data
 
     await Assistant.findById(AssistantID)
     .then((students)=>{
-        res.status(200).send({students});
+        res.json(students);
 
     }).catch((err)=>{
         console.log(err);
