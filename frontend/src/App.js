@@ -46,6 +46,8 @@ import SupplierHome from "./components/staff/supplier/SupplierHome";
 import AddSupplier from "./components/staff/supplier/AddSupplier";
 import DisplaySupplier from "./components/staff/supplier/DisplaySupplier";
 import SupplierList from "./components/staff/supplier/SupplierList";
+import SupReport from "./components/staff/supplier/SupReport";
+import EditSupplier from "./components/staff/supplier/EditSupplier";
 
 
 
@@ -108,6 +110,8 @@ function App() {
         <Route path = "/add-supplier" element={[<AddSupplier/>]} />
         <Route path ="/display-supplier" element={[<DisplaySupplier/>]} />
         <Route path = "/edit-supplier" element={[<SupplierList/>]} />
+        <Route path = "/supreport" element={[<SupReport/>]} />
+        <Route path = "/EditSupplier/:id" element={[<EditSupplier/>]} />
 
 
 

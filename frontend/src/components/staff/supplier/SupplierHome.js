@@ -4,9 +4,9 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
 const slideImages = [
-    'sup5.jpg',
-    'sup6.jpg',
-    'sup4.jpg'
+    'back12.jpg',
+    'back4.jpg',
+    'back01.jpg'
   ];
 
 export default function SupplierHome(){
