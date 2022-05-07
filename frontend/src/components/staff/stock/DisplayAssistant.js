@@ -87,7 +87,7 @@ export default class DisplayAssistant extends React.Component {
             </div>
           </div>
         </nav>
-        <div className="App stockImage2" >
+        <div className="App displayImageassis">
           <br />
           <h1 style={{ color: "white", marginLeft: "500px" }}>All Assistant</h1><br />
 
@@ -95,7 +95,7 @@ export default class DisplayAssistant extends React.Component {
           <div className="students" style={{marginLeft: "200px" }}>
             {this.state.filteredData.length === 0 ? (<div className="alert alert-danger" style={{ marginLeft: "300px", width: "20%"}}>
               <center>Data is not found<br /><br />
-                <img src="notfound.jpg" style={{ width: "70%" }} /></center> <br />
+                <img src="notfound.jfif" style={{ width: "70%" }} /></center> <br />
             </div>
             ) : (this.state.filteredData.map(i =>{
               return(
@@ -108,15 +108,15 @@ export default class DisplayAssistant extends React.Component {
                           className="border border-danger rounded-circle"
                         />
                       </div>
-                      <p >👨 <b style={{ color: "red" }}>Name   : </b>{i.name}</p>
-                      <p >🏃 <b style={{ color: "green" }}>Age   : </b>{i.age} years old</p>
-                      <p >👫 <b style={{ color: "blue" }}>Gender   : </b>{i.gender}</p>
-                      <p >🏡 <b style={{ color: "red" }}>Address   : </b>{i.address}</p>
-                      <p >📳 <b style={{ color: "green" }}>phone   : </b>{i.phone}</p>
-                      <p >💌 <b style={{ color: "blue" }}>Email   : </b>{i.email}</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "red" }}>Name   : </b>{i.name}</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "green" }}>Age   : </b>{i.age} years old</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "blue" }}>Gender   : </b>{i.gender}</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "red" }}>Address   : </b>{i.address}</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "green" }}>phone   : </b>{i.phone}</p>
+                      <p style={{color:"black", marginLeft:"10px"}}><b style={{ color: "blue" }}>Email   : </b>{i.email}</p>
                     </div>
 
-                    <a href="/edit-stock"><button className="btn btn-secondary">Edit</button></a>
+                    <a href="/edit-stock"><button className="btn btn-secondary"style={{marginLeft:"270px"}}>View</button></a>
                   </div>
                 </div>
               </p>

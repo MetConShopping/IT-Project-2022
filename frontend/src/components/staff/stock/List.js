@@ -62,7 +62,7 @@ export default class AssistantList extends Component {
             </div>
             </div>
         </nav>
-        <div className=" stockImage">
+        <div className=" displayRow">
           <br/>
         <Link to = "/report">
         <div >

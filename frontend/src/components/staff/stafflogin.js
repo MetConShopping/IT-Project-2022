@@ -4,7 +4,7 @@ import "./StaffLogin.css"
 
 const StaffLogin = () => {
   return (
-    <div style={{ backgroundImage: "url('cv.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+    <div style={{ backgroundImage: "url('shopping.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
       <br /><br /><br /><br /><br />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 

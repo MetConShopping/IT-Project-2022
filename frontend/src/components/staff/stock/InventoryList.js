@@ -63,7 +63,7 @@ export default class InventoryList extends Component {
             </div>
             </div>
         </nav>
-        <div className=" stockImage">
+        <div className=" displayRow">
           <br/>
         <Link to = "/irepot">
         <div>

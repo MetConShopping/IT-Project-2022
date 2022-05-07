@@ -95,7 +95,7 @@ const AddEnventory = () => {
           </div>
         </div>
       </nav>
-        <div className="stockImage"  style={{width:"100%"}}  ><br/><br/><br/>
+        <div className="itemImageadd"  style={{width:"100%"}}  ><br/><br/><br/>
             <form onSubmit={handleSubmit} encType='multipart/form-data' style={{width:"40%" , marginLeft:"auto" , marginRight:"auto" , display:"block" , background:"#ccffff" , padding:" 10px 10px 10px 10px" , opacity:"0.8"}}>
             <div className="cmb-3"><br/>
                 <label for="itemName" className="form-label" style={{color:"black", marginLeft:"25px"}}>Item Name <span class = "required">*</span></label>
@@ -106,7 +106,7 @@ const AddEnventory = () => {
                     placeholder="Enter the name"
                     name="itemName"
                     value={newUser.itemName}
-                    onChange={handleChange} required pattern = "[A-Za-z]+"
+                    onChange={handleChange} required pattern = "[A-Za-z-]+"
                 /><br/>
                 <label for="itemId" className="form-label" style={{color:"black", marginLeft:"25px"}}>Item Id <span class = "required">*</span></label>
                 <input 
@@ -156,7 +156,7 @@ const AddEnventory = () => {
                     className="form-control"
                     name="unitPrice"
                     value={newUser.unitPrice}
-                    onChange={handleChange} required pattern = "[0-9]+"
+                    onChange={handleChange} required pattern = "[0-9.]+"
                 />   
             </div><br/>
             
