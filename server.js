@@ -32,3 +32,8 @@ app.listen(PORT, () =>{
 app.use("/assistant", require("./BACKEND/routes/assistant"));
 
 app.use("/inventory", require("./BACKEND/routes/inventory"));
+
+app.use("/promotion", require("./BACKEND/routes/promotion"));
+
+app.use("/item", require("./BACKEND/routes/item"));
+

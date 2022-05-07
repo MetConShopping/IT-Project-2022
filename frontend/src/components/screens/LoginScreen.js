@@ -32,8 +32,8 @@ const LoginScreen = ()=>{
 
 
            else if(email === config.marketing.email && password === config.marketing.password){
-            history("/");  
-
+            history("/staff-marketing");  
+           }
            else if (email === config.supplier.email && password === config.supplier.password){
             history("/");
 
