@@ -1,18 +1,17 @@
 import React from "react";
 import "./Slider.css"
 import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import 'react-slideshow-image/dist/styles.css';
 
 const slideImages = [
-    'customer1.jpg',
-    'customer2.jpg',
-    'customer3.jpg'
+    'cusmanage1.jpg',
+    'cusmanage2.jpg',
+    'cusmanage3.jpg'
   ];
 
 export default function HomeCustomer(){
     return(
      <div> 
-        
         <div>
             <Slide easing="ease">
             <div className="each-slidestock">

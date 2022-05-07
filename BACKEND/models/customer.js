@@ -29,7 +29,8 @@ const CustomerSchema = new Schema({
     },
 
     photo: {
-        type: String
+        type: String,
+        required: false,
     },
     
     address: {
