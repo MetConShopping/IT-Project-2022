@@ -75,7 +75,7 @@ router.route("/update/:id").put(upload.single('photo') , async (req , res)=>{  /
 
     const updateCustomer = {nic, name , age , gender , address, contactNo, email, photo};
 
-    await Customer.findByIdAndUpdate({CustomerID}, updateCustomer)
+    await Customer.findByIdAndUpdate(CustomerID, updateCustomer)
     .then(()=>{
         res.status(200).send({status : "Customer Updated"});
     }).catch((err)=>{
@@ -96,12 +96,12 @@ router.route("/delete/:nic").delete(async (req , res)=>{  //delete data
     });
 });
 
-router.route("/get/:nic").get(async (req , res)=>{  //search data
-    let cusNic = req.params.nic;
+router.route("/get/:id").get(async (req , res)=>{  //search data
+    let CustomerID = req.params.id;
 
-    await Customer.findB({nic:cusNic})
-    .then((customer)=>{
-        res.status(200).send({customer});
+    await Customer.findById(CustomerID)
+    .then((customers)=>{
+        res.json(customers);
 
     }).catch((err)=>{
         console.log(err);
@@ -110,3 +110,4 @@ router.route("/get/:nic").get(async (req , res)=>{  //search data
 });
 
 module.exports = router;
+

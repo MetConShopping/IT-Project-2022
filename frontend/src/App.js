@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router , Routes , Route } from "react-router-dom";
 import StaffLogin from './components/staff/Stafflogin';
 import LoginScreen from "./components/screens/LoginScreen";
@@ -33,11 +32,21 @@ import IReport from "./components/staff/stock/InvenReport";
 import Edit from "./components/staff/stock/EditeAssistant";
 import HeaderCustomer from "./components/staff/customer/Header";
 import HomeCustomer from "./components/staff/customer/HomeCustomer";
+
+import AddCustomer from "./components/staff/customer/AddCustomer";
+import DisplayCustomer from "./components/staff/customer/DisplayCustomer";
+import CustomerList from "./components/staff/customer/CustomerList";
+import CustomerReport from "./components/staff/customer/CustomerReport";
+import EditCustomer from "./components/staff/customer/EditCustomer";
+import Complaints from "./components/staff/customer/Complaints";
+import AllComplaints from "./components/staff/customer/AllComplaints";
+
 import SupplierHeader from "./components/staff/supplier/SupplierHeader";
 import SupplierHome from "./components/staff/supplier/SupplierHome";
 import AddSupplier from "./components/staff/supplier/AddSupplier";
 import DisplaySupplier from "./components/staff/supplier/DisplaySupplier";
 import SupplierList from "./components/staff/supplier/SupplierList";
+
 
 
 
@@ -80,8 +89,19 @@ function App() {
         <Route path = "/irepot" element={[<IReport/>]}/>
         <Route path = "/edit" element={[<Edit/>]}/>
         
-        
         <Route path = "/staff-customer" element={[<HeaderCustomer/> , <HomeCustomer/>]} />
+
+        <Route path = "/add-customer" element={[<AddCustomer/>]}/>
+        <Route path = "/display-customer" element={[<DisplayCustomer/>]} />
+        <Route path = "/edit-customer" element={[<CustomerList/>]} />
+        <Route path = "/EditCustomer" element={[<EditCustomer/>]} />
+        <Route path = "/customerreport" element={[<CustomerReport/>]} />
+        <Route path = "/editcustomer/:id" element={[<EditCustomer/>]} />
+        <Route path = "/Complaints" element={[<Complaints/>]} />
+        <Route path = "/AllComplaints" element={[<AllComplaints/>]} />
+       
+       
+
 
 
         <Route path = "/staff-supplier" element={[<SupplierHeader/> , <SupplierHome/>]} />
@@ -97,6 +117,7 @@ function App() {
 
 
         
+
 
 
         
