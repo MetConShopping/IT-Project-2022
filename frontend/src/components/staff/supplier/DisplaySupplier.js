@@ -13,7 +13,7 @@ export default class DisplaySupplier extends React.Component {
 
     this.setState(prevState => {
       const filteredData = prevState.data.filter(element => {
-        return element.name.toLowerCase().includes(query.toLowerCase());
+        return element.supid.toLowerCase().includes(query.toLowerCase());
       });
 
       return {
@@ -73,9 +73,7 @@ export default class DisplaySupplier extends React.Component {
                 <li className="nav-item">
                   <Link className="nav-link" to="/edit-supplier" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Edit Supplier</Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/return-supplier" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Returns</Link>
-                </li>
+                
               </ul>
               <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{ width: "60%", marginLeft: "30px", marginTop: "4px" }}

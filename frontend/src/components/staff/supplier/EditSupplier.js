@@ -21,7 +21,7 @@ const EditSupplier = () => {
       supid: '',
       fullname : '',
       address : '',
-      eperience : '',
+      experience : '',
       itempurchesed: '',
       photo: '',
       
@@ -47,7 +47,7 @@ const EditSupplier = () => {
     formData.append('itempurchesed', newUser.itempurchesed);
     formData.append('photo', newUser.photo);
 
-    axios.put(`http://localhost:8070/supplier/update/${id}`, formData) //update assistant data
+    axios.put(`http://localhost:8070/supplier/update/${id}`, formData) //update supplier data
       .then(res => {
         console.log(res);
         setLoading(false);
@@ -83,7 +83,7 @@ const EditSupplier = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav nav-tabs">
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/staff-stock" style={{ color: "#008080" }}><i class="fa fa-fw fa-home"></i>Home</Link>
+                <Link className="nav-link " aria-current="page" to="/staff-supplier" style={{ color: "#008080" }}><i class="fa fa-fw fa-home"></i>Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/add-supplier" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Supplier</Link>
@@ -91,14 +91,10 @@ const EditSupplier = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/display-supplier" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Display Supplier</Link>
               </li>
+              
+              
               <li className="nav-item">
-                <Link className="nav-link" to="/update-supplier" style={{ color: "#008080" }}><i class="fa fa-user-circle" aria-hidden="true"></i> Add Supplier</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link " to="/retun-supplier" style={{ color: "#008080" }}><i class="fa fa-desktop" aria-hidden="true"></i> Update</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Assistant</Link>
+                <Link className="nav-link active" to="#" style={{ color: "#008080" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Supplier</Link>
               </li>
             </ul>
           </div>
@@ -107,69 +103,55 @@ const EditSupplier = () => {
       <div className="stockImage" style={{ width: "100%" }}  ><br /><br /><br />
         <form onSubmit={handleSubmit} encType='multipart/form-data' style={{ width: "40%", marginLeft: "auto", marginRight: "auto", display: "block", background: "#ccffff", padding: " 10px 10px 10px 10px", opacity: "0.8" }}>
           <div className="cmb-3"><br />
-            <label for="name" className="form-label" style={{color:"black", marginLeft:"25px"}}>Name <span class="required">*</span></label>
-            <input
-              style={{width:"70%", marginLeft:"25px"}}
-              type="text"
-              className="form-control"
-              placeholder="Enter the name"
-              name="name"
-              value={newUser.name}
-              onChange={handleChange} required pattern="[A-Za-z]+"
+          <label for="supid" className="form-label">Supplier ID <span class = "required">*</span></label>
+                <input 
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter the supid"
+                    name="supid"
+                    value={newUser.supid}
+                    onChange={handleChange} required pattern = "[0-9]{1,3}"
             /><br />
-            <label for="age" className="form-label" style={{color:"black", marginLeft:"25px"}}>Age <span class="required">*</span></label>
-            <input
-              style={{width:"70%", marginLeft:"25px"}}
-              type="text"
-              placeholder="Enter the age"
-              className="form-control"
-              name="age"
-              value={newUser.age}
-              onChange={handleChange} required pattern="[0-9]{1,3}"
+                <label for="fullname" className="form-label"> Name <span class = "required">*</span></label>
+                <input 
+                    type="text"
+                    placeholder="Enter the fullname"
+                    className="form-control"
+                    name="fullname"
+                    value={newUser.fullname}
+                    onChange={handleChange} required  pattern="[A-Za-z]+"
+
             /><br />
-            <label for="gender" className="form-label" style={{color:"black", marginLeft:"25px"}}>Gender <span class="required">*</span></label>
-            <input
-              style={{width:"70%", marginLeft:"25px"}}
-              type="text"
-              placeholder="Enter the gender"
-              className="form-control"
-              name="gender"
-              value={newUser.gender}
-              onChange={handleChange} required pattern="[A-Za-z]+"
+          <label for="address" className="form-label" >Address <span class = "required">*</span></label>
+                <textarea 
+                    rows = "5" cols = "50"
+                    placeholder="Enter the address"
+                    className="form-control"
+                    name="address"
+                    value={newUser.address}
+                    onChange={handleChange} required
             /><br />
-            <label for="address" className="form-label" style={{color:"black", marginLeft:"25px"}}>Address <span class="required">*</span></label>
-            <textarea
-              style={{width:"70%", marginLeft:"25px"}}
-              rows="5" cols="50"
-              placeholder="Enter the address"
-              className="form-control"
-              name="address"
-              value={newUser.address}
-              onChange={handleChange} required
+            <label for="experience" className="form-label">Prior Experience <span class = "required">*</span></label>  
+                 <input 
+                    type="text"
+                    placeholder="Enter the experience"
+                    className="form-control"
+                    name="experience"
+                    value={newUser.experience}
+                    onChange={handleChange} required pattern = "[0-9]{2}"
             /><br />
-            <label for="phone" className="form-label" style={{color:"black", marginLeft:"25px"}}>Phone <span class="required">*</span></label>
-            <input
-              style={{width:"70%", marginLeft:"25px"}}
-              type="text"
-              placeholder="Enter the phone"
-              className="form-control"
-              name="phone"
-              value={newUser.phone}
-              onChange={handleChange} required pattern="[0-9]{9}"
-            /><br />
-            <label for="email" className="form-label" style={{color:"black", marginLeft:"25px"}}>Email <span class="required">*</span></label>
-            <input
-              style={{width:"70%", marginLeft:"25px"}}
-              type="text"
-              placeholder="Enter the email"
-              className="form-control"
-              name="email"
-              value={newUser.email}
-              onChange={handleChange} required pattern="[0-9a-zA-Z%&$@.]+@[a-zA-Z]+\.+[a-zA-Z]{2,3}"
-            />
+           <label for="itempurchesed" className="form-label">Item Purchased <span class = "required">*</span></label>  
+                 <input 
+                    type="text"
+                    placeholder="Enter the itempurchesed"
+                    className="form-control"
+                    name="itempurchesed"
+                    value={newUser.itempurchesed}
+                    onChange={handleChange} required 
+                />   
           </div><br />
 
-          <h3 className="display-4" style={{ color: "black", fontSize: "40px" }}>Upload a Photo of Assistant</h3> <br />
+          <h3 className="display-4" style={{ color: "black", fontSize: "40px" }}>Upload a Photo of Supplier</h3> <br />
           <p className="lead" style={{ color: "black", fontSize: "13px" }}>
             Please choose a valid relavant photo
 

@@ -13,10 +13,11 @@ export default class TableRowSupplier extends Component {
         this.deleteStudent = this.deleteStudent.bind(this);
     }
 
-    deleteStudent() {
-        axios.delete('http://localhost:8070/supplier/delete/' + this.props.obj._id)
+    deleteStudent(supid) {
+        axios.delete(`http://localhost:8070/supplier/delete/${supid}`)
             .then((res) => {
                 toast("Success! Supplier Deleted");
+                window.location.reload(true);
             }).catch((error) => {
                 console.log(error)
             })
@@ -35,13 +36,13 @@ export default class TableRowSupplier extends Component {
                     className="border border-danger rounded-circle"
                 /></td>
                 <td style={{ width: "270px" }}>
-                    <Link className="edit-link" to={`/edit/${this.props.obj._id}`}>
+                    <Link className="edit-link" to={`/EditSupplier/${this.props.obj._id}`}>
                         <Button size="sm" variant="success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</Button>
                     </Link >
                     {" "}
-                    <Button size="sm" onClick={() => window.location.reload(true), this.deleteStudent} variant="danger"><i class="fa fa-window-close" aria-hidden="true" ></i> Delete</Button>
+                    <Button size="sm" onClick={() =>  this.deleteStudent(this.props.obj.supid)} variant="danger"><i class="fa fa-window-close" aria-hidden="true" ></i> Delete</Button>
                     {" "}
-                    <a href="/edit-stock"><Button
+                    <a href="/edit-supplier"><Button
                         type="submit" size="sm"
                         className="btn btn-primary"
                     ><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</Button></a>

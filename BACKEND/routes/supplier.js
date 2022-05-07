@@ -78,18 +78,18 @@ router.route("/").get((req , res)=>{ //route for display all
 
 });
 
-router.route("/update/:supid").put(async (req , res)=>{  //update data
-    let suppid = req.params.supid;
+router.route("/update/:id").put(upload.single('photo'), async  (req , res)=>{  //update data
+    let supplierID = req.params.id;
     const supid = req.body.supid;
     const fullname = req.body.fullname;
     const address = req.body.address;
-    const experience = req.body.experience;
+    const experience = Number (req.body.experience);
     const itempurchesed = req.body.itempurchesed;
     const photo = req.file.filename;
 
     const updateSupplier = {supid, fullname , address, experience , itempurchesed , photo};
 
-    await Supplier.findOneAndUpdate({supid:suppid}, updateSupplier)
+    await Supplier.findByIdAndUpdate(supplierID, updateSupplier)
     .then(()=>{
         res.status(200).send({status : "Supplier Updated"});
     }).catch((err)=>{
@@ -100,7 +100,7 @@ router.route("/update/:supid").put(async (req , res)=>{  //update data
 
 router.route("/delete/:supid").delete(async (req , res)=>{  //delete data
     let suppid = req.params.supid;
-    await Supplier.findOneAndDelete({supid:suppid})
+    await Supplier.findOneAndDelete(suppid)
     .then(()=>{
         res.status(200).send({status : "Supplier has successfully deleted"});
 
@@ -110,12 +110,12 @@ router.route("/delete/:supid").delete(async (req , res)=>{  //delete data
     });
 });
 
-router.route("/get/:supid").get(async (req , res)=>{  //search data
-    let suppid = req.params.supid;
+router.route("/get/:id").get(async (req , res)=>{  //search data
+    let supplierID = req.params.id;
 
-    await Supplier.findOne({supid:suppid})
-    .then((supplier)=>{
-        res.status(200).send({supplier});
+    await Supplier.findById(supplierID)
+    .then((suppliers)=>{
+        res.json(suppliers);
 
     }).catch((err)=>{
         console.log(err);

@@ -24,9 +24,7 @@ function SupplierHeader(){
             <li className="nav-item">
                 <Link className="nav-link" to = "/update-supplier" style={{color:"#008080"}}><i class="fa fa-user-circle" aria-hidden="true"></i> Edit Profile</Link>
             </li> 
-            <li className="nav-item">
-                <Link className="nav-link" to = "/return-supplier" style={{color:"#008080"}}><i class="fa fa-desktop" aria-hidden="true"></i> Retruns</Link>
-            </li> 
+            
           </ul>
         </div>
       </div>
