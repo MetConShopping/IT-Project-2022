@@ -36,7 +36,7 @@ export default class AssistantTableRow extends Component {
                     className="border border-danger rounded-circle"
                 /></td>
                 <td style={{ width: "270px" }}>
-                    <Link className="edit-link" to={`/edit/${this.props.obj._id}`}>
+                    <Link className="edit-link" to={`/edit-assis/${this.props.obj._id}`}>
                         <Button size="sm" variant="success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</Button>
                     </Link >
                     {" "}

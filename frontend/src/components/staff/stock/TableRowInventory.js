@@ -34,13 +34,13 @@ export default class TableRowInventory extends Component {
                 className = "border border-danger rounded-circle"
                 /></td>
                 <td style={{width:"270px"}}>
-                <Link className="edit-link" to={`/edit-item/${this.props.obj._id}`}>
+                <Link className="edit-link" to={`/edit-i/${this.props.obj._id}`}>
                         <Button size="sm" variant="success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</Button>
                     </Link >
                         {" "}
                         <Button size="sm" onClick={() => window.location.reload(true) , this.deleteInventoryItem} variant="danger"><i class="fa fa-window-close" aria-hidden="true" ></i> Delete</Button>
                         {" "}
-                        <a href="/view"><Button
+                        <a href="/view-inventory"><Button
                         type="submit"  size="sm"
                         className="btn btn-primary"
                         ><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</Button></a>

@@ -83,7 +83,7 @@ export default function DisplayInventory() {
                     <p style={{color:"black", marginLeft:"10px"}}><b style={{color:"green"}}> Unit Price   : </b>{Inventorie.unitPrice}</p>
                   </div>
                 
-                  <Link to="/view"><button className="btn btn-secondary" style={{marginLeft:"250px"}}>View</button></Link>
+                  <Link to="/view-inventory"><button className="btn btn-secondary" style={{marginLeft:"250px"}}>View</button></Link>
                   
     
                 </div>

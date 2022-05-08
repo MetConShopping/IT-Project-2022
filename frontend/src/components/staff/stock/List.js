@@ -64,7 +64,7 @@ export default class AssistantList extends Component {
         </nav>
         <div className=" displayRow">
           <br/>
-        <Link to = "/report">
+        <Link to = "/report-as">
         <div >
           <button className = "info__button" onClick={this.generatePDF} type = "primary" style={{float:"right", marginBottom:"50px",width:"200px",marginRight:"20px"}}><i class="fa fa-cogs" aria-hidden="true"></i> Genarate PDF</button>
         </div>

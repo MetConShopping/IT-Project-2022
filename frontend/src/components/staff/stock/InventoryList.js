@@ -65,7 +65,7 @@ export default class InventoryList extends Component {
         </nav>
         <div className=" displayRow">
           <br/>
-        <Link to = "/irepot">
+        <Link to = "/irepot-in">
         <div>
           <button className = "info__button" onClick={this.generatePDF} type = "primary" style={{float:"right", marginBottom:"50px",width:"200px",marginRight:"20px"}}><i class="fa fa-cogs" aria-hidden="true"></i> Genarate PDF</button>
         </div>

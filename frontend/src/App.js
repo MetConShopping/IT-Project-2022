@@ -25,7 +25,6 @@ import AddEnventory from "./components/staff/stock/inventory";
 import DisplayAssistant from "./components/staff/stock/DisplayAssistant";
 import DisplayInventory from "./components/staff/stock/DisplayInventory";
 import AssistantList from "./components/staff/stock/List";
-// import AssistantEdite from "./components/staff/stock/EditeAssistant";
 import Report from "./components/staff/stock/report";
 import InventoryList from "./components/staff/stock/InventoryList";
 import IReport from "./components/staff/stock/InvenReport";
@@ -48,6 +47,7 @@ import DisplaySupplier from "./components/staff/supplier/DisplaySupplier";
 import SupplierList from "./components/staff/supplier/SupplierList";
 import SupReport from "./components/staff/supplier/SupReport";
 import EditSupplier from "./components/staff/supplier/EditSupplier";
+import EditInventory from "./components/staff/stock/EditInventory";
 
 
 
@@ -86,13 +86,13 @@ function App() {
         <Route path = "/display-stock" element={[<DisplayAssistant/>]}/>
         <Route path = "/displayInven-stock" element={[<DisplayInventory/>]}/>
         <Route path = "/edit-stock" element={[<AssistantList/>]}/>
-        <Route path = "/report" element={[<Report/>]}/>
-        <Route path = "/view" element={[<InventoryList/>]}/>
-        <Route path = "/irepot" element={[<IReport/>]}/>
-        <Route path = "/edit" element={[<Edit/>]}/>
+        <Route path = "/report-as" element={[<Report/>]}/>
+        <Route path = "/view-inventory" element={[<InventoryList/>]}/>
+        <Route path = "/irepot-in" element={[<IReport/>]}/>
+        <Route path = "/edit-assis/:id" element={[<Edit/>]}/>
+        <Route path = "edit-i/:id" element={[<EditInventory/>]}/>
         
         <Route path = "/staff-customer" element={[<HeaderCustomer/> , <HomeCustomer/>]} />
-
         <Route path = "/add-customer" element={[<AddCustomer/>]}/>
         <Route path = "/display-customer" element={[<DisplayCustomer/>]} />
         <Route path = "/edit-customer" element={[<CustomerList/>]} />

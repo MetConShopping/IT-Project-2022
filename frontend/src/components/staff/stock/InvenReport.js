@@ -142,7 +142,7 @@ export default class IReport extends Component {
             <br />
 
             <Link
-              to={"/view"}>
+              to={"/view-inventory"}>
               <button
                 variant="contained"
                 color="primary"
